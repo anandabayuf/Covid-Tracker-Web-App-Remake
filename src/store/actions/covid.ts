@@ -25,3 +25,17 @@ export const setSelectedCountrySummary = (data: {}) => {
         payload: data
 	}
 }
+
+export const setAllDaily = (data: []) => {
+	return {
+		type: "SET_ALL_DAILY",
+        payload: data
+	}
+}
+
+export const setGlobalDetail = (data: []) => {
+	return {
+		type: "SET_GLOBAL_DETAIL",
+        payload: data
+	}
+}

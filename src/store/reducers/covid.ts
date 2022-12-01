@@ -12,13 +12,13 @@ const countryReducer = (state = [], action: IAction) => {
 	}
 }
 
-const initialState = {
+const initialSummaryState = {
 	global: {},
 	indonesia: {},
 	selectedCountry: {}
 }
 
-const summaryReducer = (state = initialState, action: IAction) => {
+const summaryReducer = (state = initialSummaryState, action: IAction) => {
     switch(action.type){
 		case "SET_GLOBAL_SUMMARY":
 			return {
@@ -40,8 +40,43 @@ const summaryReducer = (state = initialState, action: IAction) => {
     }
 }
 
+const initialDetailState = {
+	global: []
+}
+
+const detailReducer = (state = initialDetailState, action: IAction) => {
+	switch(action.type){
+		case "SET_GLOBAL_DETAIL":
+			return {
+				...state,
+				global: action.payload
+			}
+		default:
+			return state;
+	}
+}
+
+const initialDailyState = {
+	allDaily: []
+}
+
+const dailyReducer = (state = initialDailyState, action: IAction) => {
+	switch(action.type){
+		case "SET_ALL_DAILY":
+			return {
+				...state,
+				allDaily: action.payload
+			}
+		default:
+			return state;
+	}
+}
+
+
 export const covidReducers = combineReducers({
 	countries: countryReducer,
 	summaries: summaryReducer,
+	details: detailReducer,
+	daily: dailyReducer
 })
 

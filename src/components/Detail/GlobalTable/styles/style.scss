@@ -1,0 +1,147 @@
+.ant-table-wrapper.dark .ant-table{
+    background-color: #393E46 !important;
+    border-radius: 15px !important;
+}
+
+.ant-table-wrapper.light .ant-table{
+    background-color: #DBE2EF !important;
+    border-radius: 15px !important;
+}
+
+.ant-table-wrapper.dark .ant-table-thead > tr > th {
+    background: none !important;
+    color: #F9F7F7 !important
+}
+
+.ant-table-wrapper.light .ant-table-thead > tr > th {
+    background: none !important;
+    color: #112D4E !important
+}
+
+.ant-table-wrapper.dark .ant-table-cell-row-hover {
+    background-color: #222831 !important;
+}
+
+.ant-table-wrapper.light .ant-table-cell-row-hover {
+    background-color: #F9F7F7 !important;
+}
+
+.ant-table-cell {
+    border-bottom: none !important;
+}
+
+.ant-table-wrapper.dark .ant-table-empty .ant-empty-description {
+    color: #F9F7F7 !important;
+}
+
+.ant-table-wrapper.dark .ant-table-empty .ant-table-cell:hover {
+    background-color: #393E46 !important;
+}
+
+.ant-table-wrapper.light .ant-table-empty .ant-empty-description {
+    color: #112D4E !important;
+}
+
+.ant-table-wrapper.light .ant-table-empty .ant-table-cell:hover {
+    background-color: #DBE2EF !important;
+}
+
+.ant-table-wrapper.light .ant-table-empty .ant-empty-image svg {
+    filter: brightness(0) saturate(100%) invert(12%) sepia(21%) saturate(4866%) hue-rotate(193deg) brightness(90%) contrast(91%);
+}
+
+//pagination
+
+.ant-pagination.light .ant-pagination-total-text {
+    color: #3F72AF !important;
+}
+
+.ant-pagination.dark .ant-pagination-total-text {
+    color: #DBE2EF !important;
+}
+
+.ant-pagination.light .ant-pagination-item-link {
+    color: #3F72AF !important;
+}
+
+.ant-pagination.light .ant-pagination-item-link:disabled {
+    color: rgba(63, 114, 175, 0.5) !important;
+}
+
+.ant-pagination.dark .ant-pagination-item-link {
+    color: #DBE2EF !important;
+}
+
+.ant-pagination.dark .ant-pagination-item-link:disabled {
+    color: rgba(219, 226, 239, 0.5) !important;
+}
+
+.ant-pagination.light .ant-pagination-item-link:hover {
+    background-color: #DBE2EF !important;
+}
+
+.ant-pagination.dark .ant-pagination-item-link:hover {
+    background-color: #393E46 !important;
+}
+
+.ant-pagination.light .ant-pagination-item:hover {
+    background-color: #DBE2EF !important;
+}
+
+.ant-pagination.dark .ant-pagination-item:hover {
+    background-color: #393E46 !important;
+}
+
+.ant-pagination.light .ant-pagination-item-active {
+    background-color: #DBE2EF !important;
+    border: none !important;
+}
+
+.ant-pagination.dark .ant-pagination-item-active {
+    background-color: #393E46 !important;
+    border: none !important;
+}
+
+.ant-pagination.light .ant-pagination-item-active a{
+    color: #3F72AF !important
+}
+
+.ant-pagination.light .ant-pagination-item a{
+    color: #3F72AF !important
+}
+
+.ant-pagination.dark .ant-pagination-item-active a{
+    color: #DBE2EF !important
+}
+
+.ant-pagination.dark .ant-pagination-item a{
+    color: #DBE2EF !important
+}
+
+.anticon svg {
+    display: flex !important;
+}
+
+.ant-pagination.light .ant-pagination-item-ellipsis {
+    color: #3F72AF !important
+}
+
+.ant-pagination.light .ant-pagination-item-link-icon {
+    color: #3F72AF !important
+}
+
+.ant-pagination.dark .ant-pagination-item-ellipsis {
+    color: #DBE2EF !important
+}
+
+.ant-pagination.dark .ant-pagination-item-link-icon {
+    color: #DBE2EF !important
+}
+
+.ant-pagination.light .ant-pagination-options-quick-jumper {
+    color: #3F72AF !important
+}
+
+.ant-pagination.dark .ant-pagination-options-quick-jumper {
+    color: #DBE2EF !important
+}

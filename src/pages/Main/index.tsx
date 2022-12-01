@@ -1,11 +1,9 @@
 import MainLayout from "../../layout/MainLayout";
 import { useSelector, useDispatch } from "react-redux";
 import { State } from "../../store/index";
-import { getAllCountries } from "../../api/country";
 import { getAllSummary, getSummaryByCountry } from "../../api/summary";
 import { useEffect } from "react";
 import {
-	setCountries,
 	setGlobalSummary,
 	setIndonesiaSummary,
 } from "../../store/actions/covid";
@@ -15,43 +13,18 @@ import Loader from "../../components/General/Loader";
 import { GlobeAmericas } from "react-bootstrap-icons";
 import CurrentTheme from "../../styles";
 import CustomTitle from "../../components/General/CustomTitle/index";
-import { message, Select } from "antd";
+import { message } from "antd";
+import Flag from "react-world-flags";
 
 const Main: React.FC = () => {
-	const covid = useSelector((state: State) => state.covid);
+	const data = useSelector((state: State) => state.covid.summaries);
 	const dispatch = useDispatch();
 	const [isLoading, setIsLoading] = useState({
 		globalSummary: false,
 		indonesiaSummary: false,
-		fetchCountries: false,
-		selectCountrySummary: false,
 	});
 
 	const currentTheme = CurrentTheme();
-
-	useEffect(() => {
-		const getCountries = async () => {
-			setIsLoading({
-				...isLoading,
-				fetchCountries: true,
-			});
-
-			const response = await getAllCountries();
-			console.log(response.data);
-			if (response.status === 200) {
-				dispatch(setCountries(response.data.countries));
-			} else if (response.code === "ERR_NETWORK") {
-				message.error(response.message, 5);
-			}
-
-			setIsLoading({
-				...isLoading,
-				fetchCountries: false,
-			});
-		};
-
-		getCountries(); // eslint-disable-next-line
-	}, []);
 
 	useEffect(() => {
 		const getSummaries = async () => {
@@ -61,7 +34,7 @@ const Main: React.FC = () => {
 			});
 
 			const response = await getAllSummary();
-			console.log(response);
+			// console.log(response);
 			if (response.status === 200) {
 				dispatch(setGlobalSummary(response.data));
 			} else if (response.code === "ERR_NETWORK") {
@@ -101,14 +74,6 @@ const Main: React.FC = () => {
 		getIndonesianSummaries(); // eslint-disable-next-line
 	}, []);
 
-	const onChange = (value: string) => {
-		console.log(`selected ${value}`);
-	};
-
-	const onSearch = (value: string) => {
-		console.log("search:", value);
-	};
-
 	const style = {
 		icon: {
 			color: currentTheme.title,
@@ -122,10 +87,10 @@ const Main: React.FC = () => {
 					<Loader />
 				) : (
 					<SummarySection
-						confirmed={covid.summaries.global.confirmed?.value}
-						recovered={covid.summaries.global.recovered?.value}
-						deaths={covid.summaries.global.deaths?.value}
-						lastUpdate={covid.summaries.global.lastUpdate}
+						confirmed={data.global.confirmed?.value}
+						recovered={data.global.recovered?.value}
+						deaths={data.global.deaths?.value}
+						lastUpdate={data.global.lastUpdate}
 					>
 						<GlobeAmericas
 							size={32}
@@ -143,12 +108,16 @@ const Main: React.FC = () => {
 					<Loader />
 				) : (
 					<SummarySection
-						confirmed={covid.summaries.indonesia.confirmed?.value}
-						recovered={covid.summaries.indonesia.recovered?.value}
-						deaths={covid.summaries.indonesia.deaths?.value}
-						lastUpdate={covid.summaries.indonesia.lastUpdate}
+						confirmed={data.indonesia.confirmed?.value}
+						recovered={data.indonesia.recovered?.value}
+						deaths={data.indonesia.deaths?.value}
+						lastUpdate={data.indonesia.lastUpdate}
 					>
-						<span className="fi fi-id" />
+						<Flag
+							code="IDN"
+							style={{ height: "24px" }}
+							className="shadow-sm rounded-sm"
+						/>
 						<CustomTitle
 							title="Indonesia Summary"
 							level={3}
@@ -156,22 +125,6 @@ const Main: React.FC = () => {
 					</SummarySection>
 				)}
 			</div>
-			{/* <Select
-				showSearch
-				placeholder="Select a person"
-				optionFilterProp="children"
-				onChange={onChange}
-				onSearch={onSearch}
-				filterOption={(input, option) =>
-					(option?.label ?? "").toLowerCase().includes(input.toLowerCase())
-				}
-				options={covid.countries.map((country) => {
-					return {
-						label: country.name,
-						value: country.iso2
-					}
-				})}
-			/> */}
 		</MainLayout>
 	);
 };

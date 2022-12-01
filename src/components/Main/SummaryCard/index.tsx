@@ -42,7 +42,7 @@ const SummaryCard: React.FC<SummaryCardProps> = ({ title, total }) => {
 	};
 
 	const thousandFormatter = (num: number) => {
-		return num?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+		return num?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	};
 
 	const style: React.CSSProperties = {
