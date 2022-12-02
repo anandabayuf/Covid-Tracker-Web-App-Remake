@@ -8,7 +8,6 @@ export interface SearchBoxProps {
     data?: ICountry[];
     handleChange?: ((value: string, option: OptionType | OptionsType) => void);
     handleSearch?: (value: string) => void;
-    isLoading?: boolean;
 }
 
 export type OptionType = {

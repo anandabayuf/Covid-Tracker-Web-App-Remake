@@ -95,6 +95,16 @@ const GlobalTable: React.FC<GlobalTableProps> = ({ data }) => {
 				/>
 			),
 		},
+		{
+			title: "Last Update",
+			dataIndex: "lastUpdate",
+			key: "lastUpdate",
+			render: (text) => (
+				<CustomText
+					text={text === null ? "-" : new Date(text).toLocaleString()}
+				/>
+			),
+		},
 	];
 
 	const datas: TableDataType[] = data.map((el: TableDataType, index) => {
@@ -110,6 +120,7 @@ const GlobalTable: React.FC<GlobalTableProps> = ({ data }) => {
 			peopleHospitalized: el.peopleHospitalized,
 			peopleTested: el.peopleTested,
 			recovered: el.recovered,
+			lastUpdate: el.lastUpdate,
 		};
 	});
 

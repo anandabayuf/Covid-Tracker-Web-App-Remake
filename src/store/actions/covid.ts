@@ -39,3 +39,10 @@ export const setGlobalDetail = (data: []) => {
         payload: data
 	}
 }
+
+export const setRegionDetail = (data: []) => {
+	return {
+		type: "SET_REGION_DETAIL",
+        payload: data
+	}
+}

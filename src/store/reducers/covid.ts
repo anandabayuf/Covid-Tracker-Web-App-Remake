@@ -41,7 +41,8 @@ const summaryReducer = (state = initialSummaryState, action: IAction) => {
 }
 
 const initialDetailState = {
-	global: []
+	global: [],
+	region: [],
 }
 
 const detailReducer = (state = initialDetailState, action: IAction) => {
@@ -50,6 +51,11 @@ const detailReducer = (state = initialDetailState, action: IAction) => {
 			return {
 				...state,
 				global: action.payload
+			}
+		case "SET_REGION_DETAIL":
+			return {
+				...state,
+				region: action.payload
 			}
 		default:
 			return state;

@@ -15,6 +15,7 @@ import CurrentTheme from "../../styles";
 import CustomTitle from "../../components/General/CustomTitle/index";
 import { message } from "antd";
 import Flag from "react-world-flags";
+import { isAxiosError } from "axios";
 
 const Main: React.FC = () => {
 	const data = useSelector((state: State) => state.covid.summaries);
@@ -37,7 +38,7 @@ const Main: React.FC = () => {
 			// console.log(response);
 			if (response.status === 200) {
 				dispatch(setGlobalSummary(response.data));
-			} else if (response.code === "ERR_NETWORK") {
+			} else if (isAxiosError(response)) {
 				message.error(response.message, 5);
 			}
 
@@ -61,7 +62,7 @@ const Main: React.FC = () => {
 
 			if (response.status === 200) {
 				dispatch(setIndonesiaSummary(response.data));
-			} else if (response.code === "ERR_NETWORK") {
+			} else if (isAxiosError(response)) {
 				message.error(response.message, 5);
 			}
 

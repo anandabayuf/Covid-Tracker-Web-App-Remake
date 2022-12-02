@@ -10,6 +10,7 @@ import { message, Select } from "antd";
 import Loader from "../../components/General/Loader";
 import CardContainer from "../../components/Daily/CardContainer";
 import CovidChart from "../../components/Daily/CovidChart/index";
+import { isAxiosError } from "axios";
 
 const Daily: React.FC = () => {
 	const data = useSelector((state: State) => state.covid.daily.allDaily);
@@ -21,10 +22,10 @@ const Daily: React.FC = () => {
 			setIsLoading(true);
 
 			const response = await getAllDailyData();
-			console.log(response.data);
+			// console.log(response.data);
 			if (response.status === 200) {
 				dispatch(setAllDaily(response.data));
-			} else if (response.code === "ERR_NETWORK") {
+			} else if (isAxiosError(response)) {
 				message.error(response.message, 5);
 			}
 

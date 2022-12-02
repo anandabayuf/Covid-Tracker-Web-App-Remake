@@ -18,6 +18,7 @@ import {
 	OptionType,
 	OptionsType,
 } from "../../components/Detail/GlobalSelect/interfaces/interfaces";
+import { isAxiosError } from "axios";
 
 const Summary: React.FC = () => {
 	const covid = useSelector((state: State) => state.covid);
@@ -42,7 +43,7 @@ const Summary: React.FC = () => {
 			// console.log(response.data);
 			if (response.status === 200) {
 				dispatch(setCountries(response.data.countries));
-			} else if (response.code === "ERR_NETWORK") {
+			} else if (isAxiosError(response)) {
 				message.error(response.message, 5);
 			}
 
@@ -83,7 +84,7 @@ const Summary: React.FC = () => {
 			// console.log(response.data);
 			if (response.status === 200) {
 				dispatch(setSelectedCountrySummary(response.data));
-			} else if (response.code === "ERR_NETWORK") {
+			} else if (isAxiosError(response)) {
 				message.error(response.message, 5);
 			}
 
@@ -114,6 +115,7 @@ const Summary: React.FC = () => {
 						data={covid.countries}
 						handleChange={handleChange}
 						handleSearch={handleSearch}
+						isLoading={isLoading.selectCountrySummary}
 					/>
 				)}
 			</div>

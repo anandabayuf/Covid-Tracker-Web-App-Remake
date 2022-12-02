@@ -6,7 +6,6 @@ const SearchBox: React.FC<SearchBoxProps> = ({
 	data,
 	handleChange,
 	handleSearch,
-	isLoading,
 }) => {
 	const options: OptionsType = data?.map((el: ICountry) => {
 		return {
@@ -33,7 +32,6 @@ const SearchBox: React.FC<SearchBoxProps> = ({
 			}
 			options={options}
 			style={style}
-			loading={isLoading}
 		/>
 	);
 };

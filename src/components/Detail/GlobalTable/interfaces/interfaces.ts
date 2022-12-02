@@ -10,6 +10,7 @@ export interface TableDataType {
     cases28Days: number | null | undefined;
     deaths28Days: number | null | undefined;
     incidentRate: number | null | undefined;
+    lastUpdate: number | null | undefined;
 }
 
 export interface GlobalTableProps {
