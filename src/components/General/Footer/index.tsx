@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
 	};
 	return (
 		<>
-			<div className="flex justify-center m-0">
+			<div className="flex justify-center m-0 text-center">
 				<span>
 					<CustomText text="© 2022 Copyright: Remake from " />
 					<Typography.Link

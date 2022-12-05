@@ -41,13 +41,15 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 	return (
 		<Layout className={`min-h-[100vh]`}>
 			<Layout.Header
-				style={style.page}
+				style={{ ...style.page, paddingInline: "10px" }}
 				className="shadow-2xl"
 			>
 				<Header />
 			</Layout.Header>
 			<Layout.Content style={style.page}>
-				<div className="pb-[30px] pr-[30px] pl-[30px]">{children}</div>
+				<div className="pb-[30px] pr-[30px] pl-[30px] pt-[10px]">
+					{children}
+				</div>
 			</Layout.Content>
 			<Layout.Footer style={style.page}>
 				<Footer />
@@ -56,7 +58,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 				<Button
 					shape="circle"
 					size="large"
-					className={`shadow-2xl rounded-2xl hover:border-none`}
+					className={`shadow-2xl rounded-2xl border-none`}
 					style={style.floatButton}
 					icon={
 						<div className="flex justify-center">

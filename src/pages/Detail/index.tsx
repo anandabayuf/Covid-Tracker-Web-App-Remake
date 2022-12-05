@@ -180,7 +180,7 @@ const Detail: React.FC = () => {
 					level={3}
 				/>
 				<div
-					className="flex flex-row items-center gap-4"
+					className="flex flex-row max-md:flex-col items-center gap-4"
 					style={{ width: "30%" }}
 				>
 					{isLoading.fetchCountries ? (

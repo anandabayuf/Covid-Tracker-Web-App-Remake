@@ -63,50 +63,54 @@ const Header: React.FC = () => {
 		menu: {
 			backgroundColor: currentTheme.bg,
 			color: currentTheme.text,
-			width: "30%",
+			width: "100%",
 		},
 		title: {
-			paddingTop: "15px",
+			margin: "0px",
 			color: currentTheme.title,
 		},
 	};
 
 	return (
-		<Row>
+		<div className="flex flex-row max-md:justify-between">
 			<div className="logo mr-5">
 				<a href="/">
 					<Typography.Title
 						level={4}
-						className="p-3"
 						style={style.title}
+						className="pt-[15px] max-md:pt-[5px]"
 					>
-						Covid Tracker Web App
+						Covid Tracker
 					</Typography.Title>
 				</a>
 			</div>
-			<Menu
-				mode="horizontal"
-				defaultSelectedKeys={["1"]}
-				style={style.menu}
-				onSelect={(_) => handleClickItem(_.key)}
-				selectedKeys={
-					location.pathname === "/"
-						? ["1"]
-						: location.pathname === "/summary"
-						? ["2"]
-						: location.pathname === "/detail"
-						? ["3"]
-						: ["4"]
-				}
-				items={headerItem.map((item) => {
-					return {
-						key: item.key,
-						label: item.label,
-						className: theme === ThemeModeNames.LIGHT ? "light" : "dark",
-					};
-				})}
-			/>
-		</Row>
+			<div className="flex-1">
+				<Menu
+					mode="horizontal"
+					defaultSelectedKeys={["1"]}
+					style={style.menu}
+					onSelect={(_) => handleClickItem(_.key)}
+					selectedKeys={
+						location.pathname === "/"
+							? ["1"]
+							: location.pathname === "/summary"
+							? ["2"]
+							: location.pathname === "/detail"
+							? ["3"]
+							: ["4"]
+					}
+					items={headerItem.map((item) => {
+						return {
+							key: item.key,
+							label: item.label,
+							className: theme === ThemeModeNames.LIGHT ? "light" : "dark",
+						};
+					})}
+					className={theme === ThemeModeNames.LIGHT ? "light" : "dark"}
+					rootClassName={theme === ThemeModeNames.LIGHT ? "light" : "dark"}
+				/>
+			</div>
+		</div>
 	);
 };
 

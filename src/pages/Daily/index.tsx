@@ -97,7 +97,7 @@ const Daily: React.FC = () => {
 			{isLoading.daily ? (
 				<Loader />
 			) : (
-				<div className="grid grid-cols-2 gap-4">
+				<div className="grid grid-cols-2 max-lg:grid-cols-1 gap-4">
 					<CardContainer>
 						<div className="text-center">
 							<CustomTitle
@@ -115,13 +115,13 @@ const Daily: React.FC = () => {
 									title="Comparison of The Total Number of Recovered, Confirmed, Active, and Deaths by COVID-19 in The World"
 								/>
 							</div>
-							<Select
+							{/* <Select
 								showSearch
 								placeholder="Select Country"
 								optionFilterProp="children"
 								size="large"
 								allowClear
-							/>
+							/> */}
 						</div>
 						<CovidChart data={data.allDaily} />
 					</CardContainer>

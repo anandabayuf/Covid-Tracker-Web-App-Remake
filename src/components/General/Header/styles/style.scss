@@ -20,6 +20,48 @@
     border-right-color: #222831 !important;
 }
 
+.ant-menu.dark .ant-menu-submenu-active::after,
+.ant-menu.dark .ant-menu-submenu-selected::after{
+    border-bottom-color: #F9F7F7 !important;
+    border-top-color: #222831 !important;
+    border-left-color: #222831 !important;
+    border-right-color: #222831 !important;
+}
+
+.ant-menu.dark .ant-menu-submenu-title{
+    color: rgb(249, 247, 247, 0.5) !important
+}
+
+.ant-menu.dark .ant-menu-submenu-active .ant-menu-submenu-title{
+    color: #F9F7F7 !important;
+}
+
+.ant-menu-submenu.ant-menu-submenu-popup.dark {
+    background-color: #222831 !important;
+    border-radius: 10px !important
+}
+
+.ant-menu-submenu.ant-menu-submenu-popup.dark .ant-menu{
+    background-color: #222831 !important;
+    border-radius: 10px !important
+}
+
+.ant-menu-submenu.ant-menu-submenu-popup.dark .ant-menu .ant-menu-item-active{
+    color: #F9F7F7!important;
+    border-radius: 10px !important;
+    background-color: #393E46 !important;
+}
+
+.ant-menu-submenu.ant-menu-submenu-popup.dark .ant-menu-item:focus,
+.ant-menu-submenu.ant-menu-submenu-popup.dark .ant-menu-item-selected{
+    background-color: #393E46 !important;
+    border-radius: 10px !important
+}
+
+
+
+//light
+
 .ant-menu-item-only-child.light{
     color: rgb(17, 45, 78, 0.5) !important
 }
@@ -41,3 +83,41 @@
     border-left-color: #F9F7F7 !important;
     border-right-color: #F9F7F7 !important;
 }
+
+.ant-menu.light .ant-menu-submenu-active::after{
+    border-bottom-color: #112D4E !important;
+    border-top-color: #F9F7F7 !important;
+    border-left-color: #F9F7F7 !important;
+    border-right-color: #F9F7F7 !important;
+}
+
+.ant-menu.light .ant-menu-submenu-title{
+    color: rgb(17, 45, 78, 0.5) !important
+}
+
+.ant-menu.light .ant-menu-submenu-active .ant-menu-submenu-title{
+    color: #112D4E !important;
+}
+
+.ant-menu-submenu.ant-menu-submenu-popup.light .ant-menu{
+    background-color: #F9F7F7 !important;
+    border-radius: 10px !important
+}
+
+.ant-menu-submenu.ant-menu-submenu-popup.light {
+    background-color: #F9F7F7 !important;
+    border-radius: 10px !important
+}
+
+.ant-menu-submenu.ant-menu-submenu-popup.light .ant-menu .ant-menu-item-active{
+    color: #112D4E!important;
+    background-color: #DBE2EF !important;
+    border-radius: 10px !important;
+}
+
+.ant-menu-submenu.ant-menu-submenu-popup.light .ant-menu-item:focus,
+.ant-menu-submenu.ant-menu-submenu-popup.light .ant-menu-item-selected{
+    background-color: #DBE2EF !important;
+    border-radius: 10px !important
+}
+

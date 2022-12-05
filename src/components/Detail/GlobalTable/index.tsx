@@ -289,6 +289,7 @@ const GlobalTable: React.FC<GlobalTableProps> = ({ data }) => {
 				className: theme === ThemeModeNames.DARK ? "dark" : "light",
 			}}
 			className={theme === ThemeModeNames.DARK ? "dark" : "light"}
+			scroll={{ x: 400 }}
 		/>
 	);
 };
