@@ -16,8 +16,6 @@ export function getPathName(route: RouteNames){
             return `${BASE_PATH}/detail`
         case RouteNames.DAILY:
             return `${BASE_PATH}/daily`
-        case RouteNames.ABOUT:
-            return `${BASE_PATH}/about`;
         default:
             return BASE_PATH;
     }

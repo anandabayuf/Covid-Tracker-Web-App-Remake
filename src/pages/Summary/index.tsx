@@ -109,6 +109,10 @@ const Summary: React.FC = () => {
 		} // eslint-disable-next-line
 	}, [selectedCountry.name]);
 
+	useEffect(() => {
+		document.title = "Summary - Covid-19";
+	}, []);
+
 	return (
 		<MainLayout>
 			<div className="mb-5">

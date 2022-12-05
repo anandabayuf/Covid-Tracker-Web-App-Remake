@@ -33,11 +33,6 @@ const Header: React.FC = () => {
 			label: `Daily`,
 			link: "/daily",
 		},
-		{
-			key: 5,
-			label: `About`,
-			link: "/about",
-		},
 	];
 
 	const handleClickItem = (key: string) => {
@@ -55,9 +50,6 @@ const Header: React.FC = () => {
 				break;
 			case "4":
 				link = "/daily";
-				break;
-			case "5":
-				link = "/about";
 				break;
 			default:
 				link = "";
@@ -104,9 +96,7 @@ const Header: React.FC = () => {
 						? ["2"]
 						: location.pathname === "/detail"
 						? ["3"]
-						: location.pathname === "/daily"
-						? ["4"]
-						: ["5"]
+						: ["4"]
 				}
 				items={headerItem.map((item) => {
 					return {

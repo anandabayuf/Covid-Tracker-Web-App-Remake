@@ -75,6 +75,10 @@ const Main: React.FC = () => {
 		getIndonesianSummaries(); // eslint-disable-next-line
 	}, []);
 
+	useEffect(() => {
+		document.title = "Home - Covid-19";
+	}, []);
+
 	const style = {
 		icon: {
 			color: currentTheme.title,

@@ -3,5 +3,4 @@ export enum RouteNames {
     SUMMARY = "SUMMARY",
     DETAIL = "DETAIL",
     DAILY = "DAILY",
-    ABOUT = "ABOUT"
 }

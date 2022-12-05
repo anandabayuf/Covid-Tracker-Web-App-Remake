@@ -82,6 +82,10 @@ const Daily: React.FC = () => {
 		} // eslint-disable-next-line
 	}, [selectedDate]);
 
+	useEffect(() => {
+		document.title = "Daily - Covid-19";
+	}, []);
+
 	return (
 		<MainLayout>
 			<div className="mb-5">

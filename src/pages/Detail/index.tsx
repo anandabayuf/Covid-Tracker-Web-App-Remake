@@ -154,6 +154,10 @@ const Detail: React.FC = () => {
 		// console.log("search:", value);
 	};
 
+	useEffect(() => {
+		document.title = "Detail - Covid-19";
+	}, []);
+
 	return (
 		<MainLayout>
 			<div className="flex flex-row justify-between items-center mb-5">
