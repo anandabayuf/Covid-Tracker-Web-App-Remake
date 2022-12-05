@@ -63,7 +63,8 @@ const detailReducer = (state = initialDetailState, action: IAction) => {
 }
 
 const initialDailyState = {
-	allDaily: []
+	allDaily: [],
+	dailyByDate: []
 }
 
 const dailyReducer = (state = initialDailyState, action: IAction) => {
@@ -72,6 +73,11 @@ const dailyReducer = (state = initialDailyState, action: IAction) => {
 			return {
 				...state,
 				allDaily: action.payload
+			}
+		case "SET_DAILY_BY_DATE":
+			return {
+				...state,
+				dailyByDate: action.payload
 			}
 		default:
 			return state;

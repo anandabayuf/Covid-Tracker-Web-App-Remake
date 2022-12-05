@@ -14,11 +14,8 @@ import CustomTitle from "../../components/General/CustomTitle/index";
 import { getSummaryByCountry } from "../../api/summary";
 import SummarySection from "../../components/Main/SummarySection";
 import Flag from "react-world-flags";
-import {
-	OptionType,
-	OptionsType,
-} from "../../components/Detail/GlobalSelect/interfaces/interfaces";
 import { isAxiosError } from "axios";
+import { ICountry } from "../../components/Detail/SearchBox/interfaces/interfaces";
 
 const Summary: React.FC = () => {
 	const covid = useSelector((state: State) => state.covid);
@@ -56,17 +53,11 @@ const Summary: React.FC = () => {
 		getCountries(); // eslint-disable-next-line
 	}, []);
 
-	const handleChange:
-		| ((value: string, option: OptionType | OptionsType) => void)
-		| undefined = (value, option) => {
-		if (!Array.isArray(option)) {
-			// console.log(`selected ${value}`);
-			setSelectedCountry({
-				...selectedCountry,
-				code: value,
-				name: option?.label!,
-			});
-		}
+	const handleChange = (value: string) => {
+		setSelectedCountry({
+			...selectedCountry,
+			name: value,
+		});
 	};
 
 	const handleSearch = (value: string) => {
@@ -80,7 +71,7 @@ const Summary: React.FC = () => {
 				selectCountrySummary: true,
 			});
 
-			const response = await getSummaryByCountry(selectedCountry.code);
+			const response = await getSummaryByCountry(selectedCountry.name);
 			// console.log(response.data);
 			if (response.status === 200) {
 				dispatch(setSelectedCountrySummary(response.data));
@@ -94,16 +85,35 @@ const Summary: React.FC = () => {
 			});
 		};
 
-		if (selectedCountry.code !== undefined) {
+		if (selectedCountry.name !== undefined) {
 			getSelectedCountrySummary();
 		} // eslint-disable-next-line
-	}, [selectedCountry.code]);
+	}, [selectedCountry.name]);
+
+	useEffect(() => {
+		const getCountryCode = () => {
+			const countryCode = covid.countries.find(
+				(el: ICountry) => el.name === selectedCountry.name
+			);
+			// console.log(countryCode);
+			if (countryCode !== undefined) {
+				return countryCode.iso3;
+			} else return "";
+		};
+
+		if (selectedCountry.name !== undefined) {
+			setSelectedCountry({
+				...selectedCountry,
+				code: getCountryCode(),
+			});
+		} // eslint-disable-next-line
+	}, [selectedCountry.name]);
 
 	return (
 		<MainLayout>
 			<div className="mb-5">
 				<CustomTitle
-					title="Per Country Summary"
+					title="Region Summary"
 					level={3}
 				/>
 			</div>
@@ -122,7 +132,7 @@ const Summary: React.FC = () => {
 			{isLoading.selectCountrySummary ? (
 				<Loader />
 			) : (
-				selectedCountry.code && (
+				selectedCountry.name && (
 					<SummarySection
 						confirmed={covid.summaries.selectedCountry.confirmed?.value}
 						recovered={covid.summaries.selectedCountry.recovered?.value}

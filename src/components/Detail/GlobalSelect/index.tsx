@@ -1,10 +1,14 @@
 import { Select } from "antd";
 import { GlobalSelectProps, OptionsType } from "./interfaces/interfaces";
+import { useSelector } from "react-redux";
+import { State } from "../../../store/index";
+import { ThemeModeNames } from "../../../styles/interfaces/enums";
 
 const GlobalSelect: React.FC<GlobalSelectProps> = ({
 	isLoading,
 	handleChange,
 }) => {
+	const theme = useSelector((state: State) => state.theme);
 	const options: OptionsType = [
 		{
 			label: "Confirmed",
@@ -32,6 +36,8 @@ const GlobalSelect: React.FC<GlobalSelectProps> = ({
 			options={options}
 			style={style}
 			loading={isLoading}
+			popupClassName={theme === ThemeModeNames.LIGHT ? "light" : "dark"}
+			className={theme === ThemeModeNames.LIGHT ? "light" : "dark"}
 		/>
 	);
 };

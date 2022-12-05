@@ -32,6 +32,17 @@ const getAllDailyData: () => any = async () => {
     }
 }
 
+const getDailyDataByDate: (date: string) => any = async (date) => {
+    try{
+        const response = await instance({url: `/daily/${date}`});
+        
+        return response;
+    }
+    catch (error) {
+        return error;
+    }
+}
+
 const getAllConfirmed: () => any = async () => {
     try{
         const response = await instance({url: `/confirmed`});
@@ -69,6 +80,7 @@ export {
     getAllSummary,
     getSummaryByCountry,
     getAllDailyData,
+    getDailyDataByDate,
     getAllConfirmed,
     getAllRecovered,
     getAllDeaths

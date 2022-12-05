@@ -27,10 +27,6 @@ import {
 	getCountryDeaths,
 	getCountryRecovered,
 } from "../../api/country";
-import {
-	OptionType,
-	OptionsType,
-} from "../../components/Detail/SearchBox/interfaces/interfaces";
 
 const Detail: React.FC = () => {
 	const data = useSelector((state: State) => state.covid.details);
@@ -43,7 +39,6 @@ const Detail: React.FC = () => {
 	});
 	const [globalBy, setGlobalBy] = useState("confirmed");
 	const [selectedCountry, setSelectedCountry] = useState({
-		code: "",
 		name: "",
 	});
 	const [regionBy, setRegionBy] = useState("confirmed");
@@ -116,11 +111,11 @@ const Detail: React.FC = () => {
 			let response;
 
 			if (regionBy === "confirmed") {
-				response = await getCountryConfirmed(selectedCountry.code);
+				response = await getCountryConfirmed(selectedCountry.name);
 			} else if (regionBy === "deaths") {
-				response = await getCountryDeaths(selectedCountry.code);
+				response = await getCountryDeaths(selectedCountry.name);
 			} else {
-				response = await getCountryRecovered(selectedCountry.code);
+				response = await getCountryRecovered(selectedCountry.name);
 			}
 			// console.log(response);
 			if (response.status === 200) {
@@ -135,7 +130,7 @@ const Detail: React.FC = () => {
 			});
 		};
 
-		if (selectedCountry.code !== undefined && selectedCountry.code !== "") {
+		if (selectedCountry.name !== undefined && selectedCountry.name !== "") {
 			getDataCountry();
 		} // eslint-disable-next-line
 	}, [regionBy, selectedCountry]);
@@ -148,17 +143,11 @@ const Detail: React.FC = () => {
 		setRegionBy(value);
 	};
 
-	const handleChangeCountry:
-		| ((value: string, option: OptionType | OptionsType) => void)
-		| undefined = (value, option) => {
-		if (!Array.isArray(option)) {
-			// console.log(`selected ${value}`);
-			setSelectedCountry({
-				...selectedCountry,
-				code: value,
-				name: option?.label!,
-			});
-		}
+	const handleChangeCountry = (value: string) => {
+		setSelectedCountry({
+			...selectedCountry,
+			name: value,
+		});
 	};
 
 	const handleSearch = (value: string) => {
@@ -190,13 +179,17 @@ const Detail: React.FC = () => {
 					className="flex flex-row items-center gap-4"
 					style={{ width: "30%" }}
 				>
-					<SearchBox
-						data={countries}
-						handleChange={handleChangeCountry}
-						handleSearch={handleSearch}
-						isLoading={isLoading.region}
-					/>
-					{selectedCountry.code && (
+					{isLoading.fetchCountries ? (
+						<Loader />
+					) : (
+						<SearchBox
+							data={countries}
+							handleChange={handleChangeCountry}
+							handleSearch={handleSearch}
+							isLoading={isLoading.region}
+						/>
+					)}
+					{selectedCountry.name && (
 						<GlobalSelect
 							handleChange={handleChangeRegionBy}
 							isLoading={isLoading.region}
@@ -207,7 +200,7 @@ const Detail: React.FC = () => {
 			{isLoading.region ? (
 				<Loader />
 			) : (
-				selectedCountry.code && <GlobalTable data={data.region} />
+				selectedCountry.name && <GlobalTable data={data.region} />
 			)}
 		</MainLayout>
 	);

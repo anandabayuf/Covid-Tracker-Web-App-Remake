@@ -12,15 +12,14 @@ import {
 } from "recharts";
 import { CountryChartProps, DataType } from "./interfaces/interfaces";
 import CurrentTheme from "../../../styles/index";
-import CustomText from "../../General/CustomText";
 
 const CountryChart: React.FC<CountryChartProps> = ({ data }) => {
 	const currentTheme = CurrentTheme();
 
 	const datas = data?.map((el: DataType) => {
 		return {
-			date: new Date(el.reportDate).toLocaleDateString(),
-			["Mainland China"]: el.mainlandChina,
+			date: new Date(el.reportDate).toLocaleDateString(), // eslint-disable-next-line
+			["Mainland China"]: el.mainlandChina, // eslint-disable-next-line
 			["Other Locations"]: el.otherLocations,
 		};
 	});

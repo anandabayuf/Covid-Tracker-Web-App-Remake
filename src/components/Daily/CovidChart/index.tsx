@@ -19,10 +19,10 @@ const CovidChart: React.FC<CovidChartProps> = ({ data }) => {
 	const datas = data?.map((el: DataType) => {
 		return {
 			date: new Date(el.reportDate).toLocaleDateString(), // eslint-disable-next-line
-			["Recovered"]: el.recovered.total,
-			["Confirmed"]: el.confirmed.total,
-			["Active"]: el.active,
-			["Deaths"]: el.deaths.total,
+			Recovered: el.recovered.total,
+			Confirmed: el.confirmed.total,
+			Active: el.active,
+			Deaths: el.deaths.total,
 		};
 	});
 

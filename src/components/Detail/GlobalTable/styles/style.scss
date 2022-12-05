@@ -142,6 +142,118 @@
     color: #3F72AF !important
 }
 
+.ant-pagination.light .ant-pagination-options-quick-jumper input {
+    color: #3F72AF !important;
+    border: none !important;
+    border-radius: 10px !important;
+    background-color: #DBE2EF !important;
+    --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .ant-pagination.dark .ant-pagination-options-quick-jumper {
     color: #DBE2EF !important
+}
+
+.ant-pagination.dark .ant-pagination-options-quick-jumper input {
+    color: #DBE2EF !important;
+    border: none !important;
+    border-radius: 10px !important;
+    background-color: #393E46 !important;
+    --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.ant-pagination.light .ant-select .ant-select-selector {
+    background-color: #DBE2EF !important;
+}
+
+.ant-pagination.light .ant-select .ant-select-selector .ant-select-selection-placeholder{
+    color: rgba(63, 114, 175, 0.5) !important;
+}
+
+.ant-pagination.light .ant-select .ant-select-selector .ant-select-selection-item {
+    color: #3F72AF !important;
+}
+
+.ant-pagination.light .ant-select .ant-select-arrow {
+    color: #3F72AF !important;
+}
+
+.ant-pagination.light .ant-select .ant-select-clear {
+    color: #3F72AF !important;
+    background-color: #DBE2EF !important;
+}
+
+.ant-pagination.light .ant-select-dropdown {
+    background-color: #DBE2EF !important;
+}
+
+.ant-pagination.light .ant-select-dropdown .ant-select-item.ant-select-item-option {
+    color: #3F72AF !important;
+}
+
+.ant-pagination.light .ant-select-dropdown .ant-select-item.ant-select-item-option-active {
+    background-color: #F9F7F7 !important;
+    border-radius: 10px !important;
+    --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.ant-pagination.light .ant-select-dropdown .ant-select-item.ant-select-item-option-selected {
+    background-color: #F9F7F7 !important;
+    border-radius: 10px !important;
+    --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+//dark 
+
+.ant-pagination.dark .ant-select .ant-select-selector {
+    background-color: #393E46 !important;
+}
+
+.ant-pagination.dark .ant-select .ant-select-selector .ant-select-selection-placeholder{
+    color: rgba(219, 226, 239, 0.5) !important;
+}
+
+.ant-pagination.dark .ant-select .ant-select-selector .ant-select-selection-item {
+    color: #DBE2EF !important;
+}
+
+.ant-pagination.dark .ant-select .ant-select-arrow {
+    color: #DBE2EF !important;
+}
+
+.ant-pagination.dark .ant-select .ant-select-clear {
+    color: #DBE2EF !important;
+    background-color: #393E46 !important;
+}
+
+.ant-pagination.dark .ant-select-dropdown {
+    background-color: #393E46 !important;
+}
+
+.ant-pagination.dark .ant-select-dropdown .ant-select-item.ant-select-item-option {
+    color: #DBE2EF !important;
+}
+
+.ant-pagination.dark .ant-select-dropdown .ant-select-item.ant-select-item-option-active {
+    background-color: #222831 !important;
+    border-radius: 10px !important;
+    --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.ant-pagination.dark .ant-select-dropdown .ant-select-item.ant-select-item-option-selected {
+    background-color: #222831 !important;
+    border-radius: 10px !important;
+    --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }

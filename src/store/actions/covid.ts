@@ -33,6 +33,13 @@ export const setAllDaily = (data: []) => {
 	}
 }
 
+export const setDailyByDate = (data: []) => {
+	return {
+		type: "SET_DAILY_BY_DATE",
+        payload: data
+	}
+}
+
 export const setGlobalDetail = (data: []) => {
 	return {
 		type: "SET_GLOBAL_DETAIL",

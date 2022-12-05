@@ -1,6 +1,9 @@
 import { Select } from "antd";
 import { SearchBoxProps, ICountry, OptionsType } from "./interfaces/interfaces";
 import "./styles/style.scss";
+import { useSelector } from "react-redux";
+import { State } from "../../../store/index";
+import { ThemeModeNames } from "../../../styles/interfaces/enums";
 
 const SearchBox: React.FC<SearchBoxProps> = ({
 	data,
@@ -8,10 +11,11 @@ const SearchBox: React.FC<SearchBoxProps> = ({
 	handleSearch,
 	isLoading,
 }) => {
+	const theme = useSelector((state: State) => state.theme);
 	const options: OptionsType = data?.map((el: ICountry) => {
 		return {
 			label: el.name,
-			value: el.iso3,
+			value: el.name,
 		};
 	});
 
@@ -34,6 +38,8 @@ const SearchBox: React.FC<SearchBoxProps> = ({
 			options={options}
 			style={style}
 			loading={isLoading}
+			popupClassName={theme === ThemeModeNames.LIGHT ? "light" : "dark"}
+			className={theme === ThemeModeNames.LIGHT ? "light" : "dark"}
 		/>
 	);
 };
