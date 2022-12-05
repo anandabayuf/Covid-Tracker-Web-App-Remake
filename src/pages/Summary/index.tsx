@@ -135,6 +135,22 @@ const Summary: React.FC = () => {
 			</div>
 			{isLoading.selectCountrySummary ? (
 				<Loader />
+			) : selectedCountry.name === "Israel" ? (
+				<div className="flex flex-row gap-2 justify-center">
+					<CustomTitle
+						title="FREE"
+						level={1}
+					/>
+					<Flag
+						code={"PS"}
+						style={{ height: "48px" }}
+						className="shadow-sm rounded-sm"
+					/>
+					<CustomTitle
+						title="PALESTINE, NO ISRAEL, ISRAEL MUST BE VANISHED"
+						level={1}
+					/>
+				</div>
 			) : (
 				selectedCountry.name && (
 					<SummarySection

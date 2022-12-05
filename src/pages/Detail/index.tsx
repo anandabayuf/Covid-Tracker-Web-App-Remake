@@ -21,6 +21,7 @@ import GlobalSelect from "../../components/Detail/GlobalSelect";
 import CustomText from "../../components/General/CustomText/index";
 import SearchBox from "../../components/Summary/SearchBox";
 import { isAxiosError } from "axios";
+import Flag from "react-world-flags";
 import {
 	getAllCountries,
 	getCountryConfirmed,
@@ -203,6 +204,22 @@ const Detail: React.FC = () => {
 			</div>
 			{isLoading.region ? (
 				<Loader />
+			) : selectedCountry.name === "Israel" ? (
+				<div className="flex flex-row gap-2 justify-center">
+					<CustomTitle
+						title="FREE"
+						level={1}
+					/>
+					<Flag
+						code={"PS"}
+						style={{ height: "48px" }}
+						className="shadow-sm rounded-sm"
+					/>
+					<CustomTitle
+						title="PALESTINE, NO ISRAEL, ISRAEL MUST BE VANISHED"
+						level={1}
+					/>
+				</div>
 			) : (
 				selectedCountry.name && <GlobalTable data={data.region} />
 			)}
