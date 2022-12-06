@@ -47,7 +47,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 				<Header />
 			</Layout.Header>
 			<Layout.Content style={style.page}>
-				<div className="pb-[30px] pr-[30px] pl-[30px] pt-[10px]">
+				<div className="pb-[30px] max-md:pb-[10px] pr-[30px] max-md:pr-[10px] pl-[30px] max-md:pl-[10px] pt-[10px]">
 					{children}
 				</div>
 			</Layout.Content>

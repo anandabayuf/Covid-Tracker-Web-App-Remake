@@ -205,7 +205,7 @@ const Detail: React.FC = () => {
 			{isLoading.region ? (
 				<Loader />
 			) : selectedCountry.name === "Israel" ? (
-				<div className="flex flex-row gap-2 justify-center">
+				<div className="flex flex-row max-md:flex-col gap-2 justify-center">
 					<CustomTitle
 						title="FREE"
 						level={1}
