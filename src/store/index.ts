@@ -16,7 +16,12 @@ function saveToLocalStorage(state: State) {
 function loadFromLocalStorage() {
     try {
         const serialisedState = localStorage.getItem("theme");
-        if (serialisedState === null) return undefined;
+        // console.log(JSON.parse(serialisedState!));
+        if (serialisedState === null){
+            const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            // console.log(systemTheme)
+            return systemTheme ? "DARK" : "LIGHT"
+        };
         return JSON.parse(serialisedState);
     } catch (e) {
         console.warn(e);
