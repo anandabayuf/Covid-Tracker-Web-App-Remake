@@ -19,7 +19,7 @@ const SummarySection: React.FC<SummarySectionProps> = ({
 					/>
 				</div>
 			</div>
-			<div className="flex flex-row max-md:flex-col gap-4 justify-center items-center">
+			<div className="flex flex-row max-lg:flex-col gap-4 justify-center items-center">
 				<SummaryCard
 					title="Total Recovered"
 					total={recovered!}

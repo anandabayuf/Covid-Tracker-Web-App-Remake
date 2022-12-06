@@ -65,7 +65,7 @@ const SummaryCard: React.FC<SummaryCardProps> = ({ title, total }) => {
 				<img
 					src={image()}
 					alt="recovered-icon"
-					width={96}
+					className="w-[96px] max-md:w-[80px]"
 				/>
 				<div
 					className="flex flex-col gap-y-2"

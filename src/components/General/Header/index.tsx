@@ -78,7 +78,7 @@ const Header: React.FC = () => {
 					<Typography.Title
 						level={4}
 						style={style.title}
-						className="pt-[15px] max-md:pt-[10px]"
+						className="pt-[15px] max-[433px]:pt-[5px]"
 					>
 						Covid Tracker
 					</Typography.Title>
