@@ -1,4 +1,4 @@
-import { Row, Typography, Menu } from "antd";
+import { Typography, Menu } from "antd";
 import CurrentTheme from "../../../styles";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./styles/style.scss";
@@ -78,7 +78,7 @@ const Header: React.FC = () => {
 					<Typography.Title
 						level={4}
 						style={style.title}
-						className="pt-[15px] max-[433px]:pt-[5px]"
+						className="pt-[15px] max-[452px]:pt-[5px]"
 					>
 						Covid Tracker
 					</Typography.Title>
