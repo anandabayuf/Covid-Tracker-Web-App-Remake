@@ -15,6 +15,7 @@ export interface TableDataType {
     countryRegion?: string | null | undefined;
     incidenceRate?: string | null | undefined;
     ["case-fatalityRatio"]?: string | number | null | undefined;
+    caseFatalityRatio?: string | number | null | undefined;
 }
 
 export interface GlobalTableProps {

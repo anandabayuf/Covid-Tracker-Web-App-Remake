@@ -271,6 +271,11 @@ const GlobalTable: React.FC<GlobalTableProps> = ({ data }) => {
 			"case-fatalityRatio":
 				typeof el["case-fatalityRatio"] === "string"
 					? parseFloat(el["case-fatalityRatio"])
+					: el["case-fatalityRatio"] === undefined ||
+					  el["case-fatalityRatio"] === null
+					? typeof el.caseFatalityRatio === "string"
+						? parseFloat(el["caseFatalityRatio"])
+						: el["caseFatalityRatio"]
 					: el["case-fatalityRatio"],
 		};
 	});

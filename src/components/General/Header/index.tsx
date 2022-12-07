@@ -30,6 +30,11 @@ const Header: React.FC = () => {
 		},
 		{
 			key: 4,
+			label: `Geo`,
+			link: "/geo",
+		},
+		{
+			key: 5,
 			label: `Daily`,
 			link: "/daily",
 		},
@@ -49,6 +54,9 @@ const Header: React.FC = () => {
 				link = "/detail";
 				break;
 			case "4":
+				link = "/geo";
+				break;
+			case "5":
 				link = "/daily";
 				break;
 			default:
@@ -97,7 +105,9 @@ const Header: React.FC = () => {
 							? ["2"]
 							: location.pathname === "/detail"
 							? ["3"]
-							: ["4"]
+							: location.pathname === "/geo"
+							? ["4"]
+							: ["5"]
 					}
 					items={headerItem.map((item) => {
 						return {

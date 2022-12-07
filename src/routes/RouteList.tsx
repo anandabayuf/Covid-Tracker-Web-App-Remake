@@ -6,6 +6,7 @@ import Main from "../pages/Main";
 import Detail from "../pages/Detail";
 import Summary from "../pages/Summary";
 import Daily from "../pages/Daily";
+import Geo from "../pages/Geo/index";
 
 export const PUBLIC_ROUTES: IRoute[] = [
 	{
@@ -19,6 +20,10 @@ export const PUBLIC_ROUTES: IRoute[] = [
 	{
 		path: getPathName(RouteNames.DETAIL),
 		element: <Detail />,
+	},
+	{
+		path: getPathName(RouteNames.GEO),
+		element: <Geo />,
 	},
 	{
 		path: getPathName(RouteNames.DAILY),

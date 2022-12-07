@@ -14,6 +14,8 @@ export function getPathName(route: RouteNames){
             return `${BASE_PATH}/summary`
         case RouteNames.DETAIL:
             return `${BASE_PATH}/detail`
+        case RouteNames.GEO:
+            return `${BASE_PATH}/geo`
         case RouteNames.DAILY:
             return `${BASE_PATH}/daily`
         default:

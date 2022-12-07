@@ -6,7 +6,7 @@ import { State } from "../../store/index";
 import { useEffect, useState } from "react";
 import { getAllDailyData, getDailyDataByDate } from "../../api/summary";
 import { setAllDaily, setDailyByDate } from "../../store/actions/covid";
-import { message, Select } from "antd";
+import { message } from "antd";
 import Loader from "../../components/General/Loader";
 import CardContainer from "../../components/Daily/CardContainer";
 import CovidChart from "../../components/Daily/CovidChart/index";
